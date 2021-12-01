@@ -2,7 +2,7 @@
 <!-- This file was written by the internal XML-Handler of Y-Files.-->
 <!DOCTYPE graphml SYSTEM "http://www.graphdrawing.org/dtds/graphml.dtd">
 <graphml>
-<graph edgedefault="undirected" id="G">
+<graph edgedefault="directed" id="G">
 <node id="n0"/>
 <node id="n1"/>
 <node id="n2"/>
