@@ -72,7 +72,7 @@ Note that we expect you to implement all four steps of the algorithm:
 
 Please see the [/data](/data) folder for example data you can use in GraphML and GraphViz formats. The data is originally in GraphML from the [Rome-lib dataset](http://www.graphdrawing.org/download/rome-graphml.tgz). Your resulting visualization should be something like this:
 
-![Sugiyama layout of grafo155.10 with Tulip](/data/grafo155.10-Tulip_Sugiyama.png)
+![Sugiyama layout of test-graph-01 with Tulip](/data/test-graph-01-Tulip_Sugiyama.png)
 
 This image was generated using [Tulip](tulip.labri.fr/site/) and it's included Sugiyama layout from OGDF, described [here](http://cs.brown.edu/people/rtamassi/gdhandbook/chapters/ogdf.pdf).
 
