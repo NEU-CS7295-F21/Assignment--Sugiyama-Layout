@@ -1,6 +1,6 @@
 # Assignment — Sugiyama Layout
 
-​This repository is your starting point for the assignment and includes instructions below.
+This repository is your starting point for the assignment and includes instructions below.
 
 # Aim of the assignment
 
@@ -102,6 +102,7 @@ But you don't need to implement the best or optimal solution in each case! Do wh
 
 #### IV. Final positioning options, sorted roughly easiest to hardest:
 
+0. Assign first node in each layer to 0 coordinate and add each subsequent one some separation distance apart. Will result in left/top shifting the nodes. (Useful for testing.)
 1. Quadratic programming method. _See Sugiyama (2002), pp. 75; Healy & Nikolov (2013), pp. 441._
 2. Priority layout method. _See Sugiyama (2002), pp. 77; Healy & Nikolov (2013), pp. 441._
 3. Gansner et al.'s exact or heuristic algorithm. _See citation GKNV93 in Healy & Nikolov (2013), pp. 441._
