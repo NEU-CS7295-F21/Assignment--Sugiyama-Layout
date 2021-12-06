@@ -70,11 +70,21 @@ Note that we expect you to implement all four steps of the algorithm:
 3. Vertex ordering
 4. Final positioning
 
-Please see the [/data](/data) folder for example data you can use in GraphML and GraphViz formats. The data is originally in GraphML from the [Rome-lib dataset](http://www.graphdrawing.org/download/rome-graphml.tgz). Your resulting visualization should be something like this:
+Please see the [/data](/data) folder for example data you can use in GraphML and GraphViz formats. The data is originally in GraphML from the [Rome-lib dataset](http://www.graphdrawing.org/download/rome-graphml.tgz). Your resulting visualization should have a layout something like this (if you used the `.gv` file, with nodes ids starting at 1):
 
-![Sugiyama layout of test-graph-01 with Tulip](/data/test-graph-01-Tulip_Sugiyama.png)
+![Sugiyama layout of test-graph-01.gv with Tulip](/data/test-graph-01.gv_Tulip-Sugiyama.png)
 
-This image was generated using [Tulip](tulip.labri.fr/site/) and it's included Sugiyama layout from OGDF, described [here](http://cs.brown.edu/people/rtamassi/gdhandbook/chapters/ogdf.pdf).
+or like this (if you used the `.graphml` file, which has node ids starting at 0):
+
+![Sugiyama layout of test-graph-01.graphml with Tulip](/data/test-graph-01.graphml_Tulip-Sugiyama.png)
+
+The blue edges are part of a directed cycle.
+
+These were generated using [Tulip](tulip.labri.fr/site/) and it's included Sugiyama layout from OGDF, described [here](http://cs.brown.edu/people/rtamassi/gdhandbook/chapters/ogdf.pdf).
+
+Here's the same dataset (`.gv` file) shown using [GraphViz](https://graphviz.org/)'s dot layout via [Viz.js](https://github.com/mdaines/viz.js):
+![dot layout of test-graph-01.gv with Viz.js](/data/test-graph-01.gv_graphviz-vizjs-dot.svg)
+
 
 For testing, you're welcome to use other graphs from Rome-lib, or the exciting [Unix history graph](https://github.com/x64dbg/ogdf/blob/master/_examples/layout/hierarchical/unix-history.gml) (GML file, not the same as GraphML).
 
