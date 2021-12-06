@@ -55,20 +55,59 @@ Write the code to implement Sugiyama's layout and visualize the result for a gra
 
 You're welcome to use any language you like for the algorithm and any visualization frontend (including printing a beautiful text version of the layout to the terminal), as long as you can get all the code into this repo.
 
-Here are three good references on how the algorithm works:
+### The algorithm
 
-> Sugiyama et al. (1981) Methods for visual understanding of hierarchical system structures. IEEE Transactions on Systems, Man, and Cybernetics. doi: [10.1109/TSMC.1981.4308636](https://doi.org/10.1109/TSMC.1981.4308636). _The original article_. 
+Here are three good references on how the algorithm works:
 
 > Sugiyama (2002) Graph drawing and applications for software and knowledge engineers.
 doi: [10.1142/4902](https://doi.org/10.1142/4902) [Canvas access-controlled PDF](https://northeastern.instructure.com/courses/90512/files/11199469?wrap=1). _In particular, starting page 61._
 
 > Healy & Nikolov (2013) Hierarchical Drawing Algorithms. [Author PDF](https://cs.brown.edu/people/rtamassi/gdhandbook/chapters/hierarchical.pdf). _Mixed in with other methods._
 
+> Sugiyama et al. (1981) Methods for visual understanding of hierarchical system structures. IEEE Transactions on Systems, Man, and Cybernetics. doi: [10.1109/TSMC.1981.4308636](https://doi.org/10.1109/TSMC.1981.4308636). _The original article_. 
+
 Note that we expect you to implement all four steps of the algorithm:
-1. Cycle removal
-2. Layer assignment
-3. Vertex ordering
-4. Final positioning
+
+I. Cycle removal
+II. Layer assignment
+III. Vertex ordering
+IV. Final positioning
+
+But you don't need to implement the best or optimal solution in each case! Do what you can. I.e., here are several of the approaches for each step. We suggest you try the #1 in each list.
+
+#### I. Cycle removal options, sorted roughly easiest to hardest:
+
+0. Remove them manually (only useful for testing)
+1. Simple depth-first search approach. _See Sugiyama (2002), pp. 62._
+2. Simple repeated maximal out-degree node removal. _See Sugiyama (2002), pp. 63._
+3. Divide and conquer approach _See Sugiyama (2002), pp. 63; Healy & Nikolov (2013), pp. 414._
+4. Exact ILP method. _See references at Healy & Nikolov (2013), pp. 417._
+
+#### II. Layer assignment options, sorted roughly easiest to hardest:
+
+0. Assign layers manually (only useful for testing)
+1. Simple spanning tree approach. _See Healy & Nikolov (2013), pp. 419–420._
+2. Longest path algorithm. _See pseudocode in Healy & Nikolov (2013), pp. 421; Sugiyama (2002), pp. 63–64._
+3. Min-width algorithm. _See pseudocode in Healy & Nikolov (2013), pp. 423._
+
+    Optionally, the vertex promotion heuristic can be used along with the longest path or min-width algorithms. _See pseudocode in Healy & Nikolov (2013), pp. 424–425._
+
+#### III. Vertex ordering options, sorted roughly easiest to hardest:
+
+1. Barycentric heuristic for multi-layer crossing minimization. _See Healy & Nikolov (2013), pp. 435, 438; Sugiyama (2002), pp. 73._
+
+    Optionally, add Gansner et al.'s stopping criteria instead of the number of iterations. _(Citation GKNV93 in Healy & Nikolov (2013), pp. 438.)_
+
+2. Try one of the optimal versions. _See Healy & Nikolov (2013), pp. 439._
+
+#### IV. Final positioning options, sorted roughly easiest to hardest:
+
+1. Quadratic programming method. _See Sugiyama (2002), pp. 75; Healy & Nikolov (2013), pp. 441._
+2. Priority layout method. _See Sugiyama (2002), pp. 77; Healy & Nikolov (2013), pp. 441._
+3. Gansner et al.'s exact or heuristic algorithm. _See citation GKNV93 in Healy & Nikolov (2013), pp. 441._
+
+
+### Example data for testing
 
 Please see the [/data](/data) folder for example data you can use in GraphML and GraphViz formats. The data is originally in GraphML from the [Rome-lib dataset](http://www.graphdrawing.org/download/rome-graphml.tgz). Your resulting visualization should have a layout something like this (if you used the `.gv` file, with nodes ids starting at 1):
 
